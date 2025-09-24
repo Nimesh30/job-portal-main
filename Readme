@@ -1,0 +1,103 @@
+Job Portal Backend (Express + MongoDB)
+
+This is the backend for a job portal application built using Node.js, Express, and MongoDB.
+It provides APIs for managing users, companies, jobs, and applications, with authentication and cookie handling.
+
+🚀 Features
+
+User authentication & management
+
+Company management
+
+Job postings & listings
+
+Application management
+
+MongoDB connection with Mongoose
+
+CORS enabled for frontend integration
+
+Serves frontend (React/Vite build) from frontend/dist
+
+📂 Project Structure
+project/
+│── routes/
+│   ├── userroutes.js
+│   ├── companyroutes.js
+│   ├── jobroutes.js
+│   └── applicationroutes.js
+│
+│── utils/
+│   └── db.js         # MongoDB connection
+│
+│── frontend/         # React frontend build (served by backend)
+│
+│── server.js         # Main Express app
+│── .env              # Environment variables
+│── package.json
+
+⚙️ Installation
+
+Clone the repository
+
+git clone <repo-url>
+cd project
+
+
+Install dependencies
+
+npm install
+
+
+Install dev dependencies (optional, for hot reload)
+
+npm install --save-dev nodemon
+
+📦 Dependencies
+
+express
+
+cookie-parser
+
+cors
+
+dotenv
+
+mongoose
+
+🔑 Environment Variables
+
+Create a .env file in the root directory with the following:
+
+PORT=8080
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+
+▶️ Running the App
+Development
+npm run dev
+
+
+(using nodemon)
+
+Production
+npm start
+
+
+Server will run on:
+
+http://localhost:8080
+
+🌐 API Endpoints
+Route	Method	Description
+/api/v1/user	CRUD	User-related routes
+/api/v1/company	CRUD	Company-related routes
+/api/v1/job	CRUD	Job-related routes
+/api/v1/applications	CRUD	Application routes
+📦 Serving Frontend
+
+This backend serves the React (Vite) frontend build:
+
+Place your frontend build inside frontend/dist.
+
+Backend will serve index.html for all routes (app.get('*')).
